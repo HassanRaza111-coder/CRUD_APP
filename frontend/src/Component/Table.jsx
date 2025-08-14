@@ -11,9 +11,9 @@ export default function Table({ Deletuser, UpdatedUser }) {
             try {
                 const user = await axios.get('http://localhost:8000/api/get')
                 const response = user.data
-                // console.log(response.users)
+                console.log(response.users)
                 setData(response)
-                // console.log(response.data.users.email, 'email')
+                console.log(response.data.users.email, 'email')
             } catch (error) {
                 console.log(error)
             }
@@ -30,11 +30,11 @@ export default function Table({ Deletuser, UpdatedUser }) {
                     <div className="table-title">
                         <div className="row">
                             <div className="col-sm-6">
-                                <h2>Manage <b>Employees</b></h2>
+                                <h2>Manage <b>Students</b></h2>
                             </div>
                             <div className="col-sm-6">
                                 <a href="#" className="btn btn-success" data-bs-toggle="modal" data-bs-target="#addEmployeeModal">
-                                    <i className="material-icons">&#xE147;</i> <span>Add New Employee</span>
+                                    <i className="material-icons">&#xE147;</i> <span>Add New Students</span>
                                 </a>
                             </div>
                         </div>

@@ -9,7 +9,7 @@ import toast from 'react-hot-toast'
 export default function UserTable() {
     const [userId, setUserId] = useState()
     const [updatedUserId, setUpdatedUserId] = useState()
-    console.log(updatedUserId)
+    // console.log(updatedUserId)
     const [value, setValue] = useState({
         name: "",
         fathername: "",
@@ -55,11 +55,11 @@ export default function UserTable() {
             if (response.success) {
                 toast.success(response.message)
             }
-            // console.log(response)
+            console.log(response)
         } catch (error) {
             console.log(error)
         }
-        // console.log(value)
+        console.log(value)
     }
     return (
         <>

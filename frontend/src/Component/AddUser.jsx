@@ -27,7 +27,7 @@ export default function AddUser() {
             const adduser = await axios.post('http://localhost:8000/api/create', value)
             const response = adduser.data
             if (response.success) {
-                toast.success(response.Message)
+                toast.success(response.message)
                 CloseRef.current.click()
 
             }
