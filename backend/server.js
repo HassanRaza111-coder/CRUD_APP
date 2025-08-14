@@ -27,18 +27,16 @@ app.use("/api", routers);
 
 // Serve frontend in production
 if (process.env.NODE_ENV === "production") {
-    const frontendPath = path.join(__dirname, "../frontend/dist");
+    const frontendPath = path.join(__dirname, "../frontend/dist"); 
     app.use(express.static(frontendPath));
 
-    // Catch-all route for React
     app.get("*", (req, res) => {
         res.sendFile(path.resolve(frontendPath, "index.html"));
     });
 }
 
-// Port setup
+// Port setup for Render
 const PORT = process.env.PORT || 8000;
-
-app.listen(PORT, () => {
+app.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on port ${PORT}`);
 });
